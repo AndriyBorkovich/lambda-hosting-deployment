@@ -27,4 +27,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           cd ./${{ matrix.project }}
-          dotnet lambda deploy-function --region ${{ secrets.AWS_REGION }} --environment-variables "ASPNETCORE_ENVIRONMENT=Development"
+          dotnet lambda deploy-function --region ${{ secrets.AWS_REGION }}
