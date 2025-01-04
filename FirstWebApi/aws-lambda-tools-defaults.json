@@ -7,6 +7,7 @@
   "function-timeout": 60,
   "function-handler": "Test",
   "function-name": "FirstWebApi",
+  "function-role": "arn:aws:iam::235494780497:role/service-role/SimpleFunc-role-4121tvde",
   "environment-variables": "",
   "function-url-enable": true
 }
