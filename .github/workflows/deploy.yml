@@ -1,0 +1,35 @@
+﻿name: Deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - FirstWebApi
+          - SecondWebApi
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Install AWS Lambda Tools
+        run: dotnet tool install -g Amazon.Lambda.Tools
+      - name: Deploy to AWS Lambda
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          cd ./${{ matrix.project }}}
+          dotnet lambda deploy-function \
+            --function-name "MyLambdaFunction" \
+            --function-role "arn:aws:iam::123456789012:role/MyLambdaRole" \
+            --function-memory-size 512 \
+            --function-timeout 30 \
+            --environment-variables "ASPNETCORE_ENVIRONMENT=Development"
