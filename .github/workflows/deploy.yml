@@ -27,9 +27,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           cd ./${{ matrix.project }}}
-          dotnet lambda deploy-function \
-            --function-name "MyLambdaFunction" \
-            --function-role "arn:aws:iam::123456789012:role/MyLambdaRole" \
-            --function-memory-size 512 \
-            --function-timeout 30 \
-            --environment-variables "ASPNETCORE_ENVIRONMENT=Development"
+          dotnet lambda deploy-function --environment-variables "ASPNETCORE_ENVIRONMENT=Development"
