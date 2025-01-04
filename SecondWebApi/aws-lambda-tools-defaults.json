@@ -8,6 +8,6 @@
   "function-handler": "SecondWebApi",
   "function-name": "SecondWebApi",
   "function-role": "arn:aws:iam::235494780497:role/service-role/SimpleFunc-role-4121tvde",
-  "environment-variables": "Test2=1234",
+  "environment-variables": "",
   "function-url-enable": true
 }
