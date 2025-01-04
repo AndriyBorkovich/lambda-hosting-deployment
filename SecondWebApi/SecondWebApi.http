@@ -1,6 +1,0 @@
-@SecondWebApi_HostAddress = http://localhost:5294
-
-GET {{SecondWebApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

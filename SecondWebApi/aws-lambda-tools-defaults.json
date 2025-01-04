@@ -5,7 +5,7 @@
   "function-runtime": "dotnet8",
   "function-memory-size": 256,
   "function-timeout": 60,
-  "function-handler": "Test",
+  "function-handler": "SecondWebApi",
   "function-name": "SecondWebApi",
   "function-role": "arn:aws:iam::235494780497:role/service-role/SimpleFunc-role-4121tvde",
   "environment-variables": "",
